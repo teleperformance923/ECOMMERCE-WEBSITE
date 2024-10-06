@@ -21,11 +21,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Build project
-      run: npm run build # Cambia esto si usas otro comando de construcción
-
     - name: Deploy to Surge
-      run: |
+      run: 
         npm install -g surge
         surge ./ klk-klk32323.surge.sh
       env:
