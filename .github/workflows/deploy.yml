@@ -18,4 +18,4 @@ jobs:
 
       - name: Deploy to Surge
         run: |
-          surge --token ${{ secrets.SURGE_TOKEN }} nik3ss-store3s.surge.sh ${{ secrets.SURGE_DOMAIN }}
+          surge --token ${{ secrets.SURGE_TOKEN }} ./src nik3ss-store3s.surge.sh ${{ secrets.SURGE_DOMAIN }}
