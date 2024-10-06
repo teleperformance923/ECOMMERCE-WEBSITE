@@ -27,6 +27,7 @@ jobs:
     - name: Deploy to Surge
       run: |
         npm install -g surge
-        surge Parcial\ECO\ECOMMERCE-WEBSITE\ECOMMERCE-WEBSITE --domain klk-klk32323.surge.sh
+        surge ./ klk-klk32323.surge.sh
       env:
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
