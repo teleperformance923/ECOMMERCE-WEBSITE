@@ -30,4 +30,4 @@ jobs:
         surge ./ klk-klk32323.surge.sh
       env:
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-        SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+       
