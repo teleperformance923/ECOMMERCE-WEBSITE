@@ -3,28 +3,19 @@ name: Deploy to Surge
 on:
   push:
     branches:
-      - main # Cambia esto si utilizas otra rama
+      - main  # Change this if your default branch is different
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '21' # Cambia a la versión que necesites
+      - name: Install Surge
+        run: npm install -g surge
 
-    - name: Install dependencies
-      run: npm install
-
-    - name: Deploy to Surge
-      run: 
-        npm install -g surge
-        surge ./ klk-klk32323.surge.sh
-      env:
-        SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-       
+      - name: Deploy to Surge
+        run: |
+          surge --token ${{ secrets.SURGE_TOKEN }} nik3ss-store3s.surge.sh ${{ secrets.SURGE_DOMAIN }}
